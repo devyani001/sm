@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earn Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    .navbar {
+      background-color: #1e293b;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .btn {
+      background-color: #3b82f6;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">JumpTask Style Dashboard</div>
+
+  <div class="container">
+    <div class="card">
+      <h3>Surveys</h3>
+      <p>Complete quick surveys and earn rewards instantly.</p>
+      <button class="btn">Start Earning</button>
+    </div>
+
+    <div class="card">
+      <h3>Watch Ads</h3>
+      <p>Watch sponsored ads and earn tokens for every video.</p>
+      <button class="btn">Watch Now</button>
+    </div>
+
+    <div class="card">
+      <h3>Play Games</h3>
+      <p>Download and play mobile games to receive bonus rewards.</p>
+      <button class="btn">Explore Games</button>
+    </div>
+
+    <div class="card">
+      <h3>Refer Friends</h3>
+      <p>Invite your friends and get a commission on their tasks.</p>
+      <button class="btn">Refer Now</button>
+    </div>
+  </div>
+</body>
+</html>
