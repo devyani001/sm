@@ -3,131 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pure Carousel</title>
+  <title>Earn Dashboard</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #03033b;
-      color: #fff;
+      background-color: #0f172a;
+      color: white;
     }
 
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      margin: 30px auto;
-      border-radius: 15px;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 300%;
-    }
-
-    .slide {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
+    .navbar {
+      background-color: #1e293b;
+      padding: 15px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 10px 0;
-      font-size: 1.2em;
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    .controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
     }
 
-    .prev,
-    .next {
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 10px;
+    .card {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .btn {
+      background-color: #3b82f6;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 18px;
-      user-select: none;
+      margin-top: 10px;
     }
 
-    @media (max-width: 600px) {
-      .caption {
-        font-size: 1em;
-        padding: 6px 0;
-      }
-
-      .prev,
-      .next {
-        padding: 6px;
-        font-size: 16px;
-      }
+    .btn:hover {
+      background-color: #2563eb;
     }
   </style>
 </head>
 <body>
+  <div class="navbar">JumpTask Style Dashboard</div>
 
-  <div class="carousel">
-    <div class="slides" id="slide-container">
-      <div class="slide">
-        <img src="https://img.freepik.com/premium-photo/navy-color-background-background-generative-ai_913266-4942.jpg" alt="Slide 1" />
-        <div class="caption">This is the first slide caption.</div>
-      </div>
-      <div class="slide">
-        <img src="https://img.freepik.com/premium-photo/navy-color-background-background-generative-ai_913266-4942.jpg" alt="Slide 2" />
-        <div class="caption">This is the second slide caption.</div>
-      </div>
-      <div class="slide">
-        <img src="https://img.freepik.com/premium-photo/navy-color-background-background-generative-ai_913266-4942.jpg" alt="Slide 3" />
-        <div class="caption">This is the third slide caption.</div>
-      </div>
+  <div class="container">
+    <div class="card">
+      <h3>Surveys</h3>
+      <p>Complete quick surveys and earn rewards instantly.</p>
+      <button class="btn">Start Earning</button>
     </div>
 
-    <div class="controls">
-      <span class="prev" onclick="moveSlide(-1)">❮</span>
-      <span class="next" onclick="moveSlide(1)">❯</span>
+    <div class="card">
+      <h3>Watch Ads</h3>
+      <p>Watch sponsored ads and earn tokens for every video.</p>
+      <button class="btn">Watch Now</button>
+    </div>
+
+    <div class="card">
+      <h3>Play Games</h3>
+      <p>Download and play mobile games to receive bonus rewards.</p>
+      <button class="btn">Explore Games</button>
+    </div>
+
+    <div class="card">
+      <h3>Refer Friends</h3>
+      <p>Invite your friends and get a commission on their tasks.</p>
+      <button class="btn">Refer Now</button>
     </div>
   </div>
-
-  <script>
-    let currentIndex = 0;
-
-    function moveSlide(step) {
-      const slides = document.getElementById('slide-container');
-      const totalSlides = slides.children.length;
-
-      currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    // Optional: Auto-slide every 5 seconds
-    setInterval(() => {
-      moveSlide(1);
-    }, 5000);
-  </script>
-
 </body>
 </html>
