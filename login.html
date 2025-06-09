@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillMint - Earn & Empower</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary: #00ffb2;
+      --background: rgb(23, 26, 44);
+      --card: #1e1e1e;
+      --text: #ffffff;
+      --muted: #bbbbbb;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background-color: transparent;
+      /*border-bottom: 1px solid #333;*/
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav a {
+      color: var(--muted);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn {
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 1px 1px 4px red;
+    }
+
+    .landing {
+      text-align: center;
+      padding: 6rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .landing h1 {
+      font-size: 3rem;
+      /*color: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);*/
+      margin-bottom: 1rem;
+
+
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+    }
+
+    .landing p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      margin-bottom: 100px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 4rem auto;
+      background-color: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-container h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      border: 2px solid #fff;
+      border-top: 0px;
+      border-right: 0px;
+      border-left: 0px;
+      max-width: 475px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: #000;
+      font-weight: bold;
+      padding: 0.8rem;
+      border-radius: 8px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: #000;
+      font-weight: bold;
+      padding: 0.8rem;
+      border-radius: 8px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    ul li {
+      background: #1e1e1e;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">SkillMint</div>
+    <nav>
+      <!-- <a href="#landing">Login</a> -->
+      <!-- <a href="index.html">Register</a> -->
+    </nav>
+  </header>
+
+  <section id="landing" class="landing">
+    <h1>Empower Yourself with SkillMint</h1>
+    <p>India’s first trusted student earning platform that partners with startups. Complete tasks, promote real
+      businesses, and earn directly with transparency and trust. No fake referrals, only real impact.</p>
+    <a href="#register" class="btn">Get Started</a>
+  </section>
+
+  <section id="register" class="form-container" style="display: none">
+    <h2>Create Your SkillMint Account</h2>
+    <form id="registerForm" onsubmit="return storeUserData()">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID *</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age *</label>
+        <input type="number" id="age" min="14" max="60" required />
+        <div id="ageError" class="error">You must be between 14 and 60 years old.</div>
+      </div>
+      <button type="submit" class="btn-submit">Continue to OTP</button>
+    </form>
+  </section>
+
+  <section id="otpSection" class="form-container" style="display: none">
+    <h2>Enter OTP sent to your phone</h2>
+    <input type="text" id="otp" placeholder="Enter OTP (0000)" required />
+    <div id="otpError" class="error">Invalid OTP. Try again.</div>
+    <a href="index.html"><button class="btn-submit" onclick="verifyOTP()">Verify OTP</button></a>
+  </section>
+
+  <!-- <section id="tasksSection" class="form-container" style="display: none">
+    <h2>Welcome, <span id="userName"></span> 👋</h2>
+    <ul>
+      <li>📢 Promote Startup A on Instagram – ₹20</li>
+      <li>📱 Share Startup B’s App in 3 WhatsApp groups – ₹15</li>
+      <li>📝 Write a short review for Startup C – ₹25</li>
+    </ul>
+  </section> -->
+
+  <script>
+    function storeUserData() {
+      const age = document.getElementById("age").value;
+      const error = document.getElementById("ageError");
+      if (age < 14 || age > 60) {
+        error.style.display = "block";
+        return false;
+      }
+      error.style.display = "none";
+
+      localStorage.setItem("name", document.getElementById("name").value);
+      localStorage.setItem("email", document.getElementById("email").value);
+      localStorage.setItem("phone", document.getElementById("phone").value);
+      localStorage.setItem("age", document.getElementById("age").value);
+
+      document.getElementById("register").style.display = "none";
+      document.getElementById("otpSection").style.display = "block";
+      return false;
+    }
+
+    function verifyOTP() {
+      const otp = document.getElementById("otp").value;
+      if (otp === "0000") {
+        document.getElementById("otpSection").style.display = "none";
+        document.getElementById("tasksSection").style.display = "block";
+        document.getElementById("userName").innerText = localStorage.getItem("name") || "User";
+      } else {
+        document.getElementById("otpError").style.display = "block";
+      }
+    }
+
+    document.querySelector('a[href="#register"]').addEventListener('click', () => {
+      document.getElementById("landing").style.display = "none";
+      document.getElementById("register").style.display = "block";
+    });
+  </script>
+</body>
+
+</html>
