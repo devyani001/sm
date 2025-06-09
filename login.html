@@ -7,6 +7,9 @@
   <title>SkillMint - Earn & Empower</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
     :root {
       --primary: #00ffb2;
       --background: rgb(23, 26, 44);
@@ -70,7 +73,8 @@
       /*color: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);*/
       margin-bottom: 1rem;
 
-
+      font-family: "Metal Mania", system-ui;
+      word-spacing: 5px;
       background: linear-gradient(90deg,
           #ff4d4d 0%,
           #f9cb28 100%);
@@ -90,14 +94,24 @@
     .form-container {
       max-width: 500px;
       margin: 4rem auto;
-      background-color: var(--card);
+      background: rgba(255, 255, 255, 0.1); /* Transparency level */
+            backdrop-filter: blur(12px); /* Blur intensity */
+            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Glass border */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
 
     .form-container h2 {
-      color: var(--primary);
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       text-align: center;
       margin-bottom: 2rem;
     }
@@ -109,7 +123,7 @@
     label {
       display: block;
       margin-bottom: 0.5rem;
-      color: var(--muted);
+      color: red;
     }
 
     input {
@@ -117,8 +131,13 @@
       padding: 0.8rem;
       border: none;
       border-radius: 5px;
-      background-color: #2a2a2a;
-      color: white;
+      background: rgba(255, 255, 255, 0.1); /* Transparency level */
+            backdrop-filter: blur(12px); /* Blur intensity */
+            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Glass border */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      color: red;
       border: 2px solid #fff;
       border-top: 0px;
       border-right: 0px;
@@ -128,8 +147,12 @@
     }
 
     .btn-submit {
-      background-color: var(--primary);
-      color: #000;
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       font-weight: bold;
       padding: 0.8rem;
       border-radius: 8px;
@@ -140,8 +163,12 @@
     }
 
     .btn-submit {
-      background-color: var(--primary);
-      color: #000;
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       font-weight: bold;
       padding: 0.8rem;
       border-radius: 8px;
@@ -161,7 +188,9 @@
     }
 
     ul li {
-      background: #1e1e1e;
+      background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
       margin: 10px;
       padding: 15px;
       border-radius: 10px;
@@ -171,7 +200,12 @@
 
 <body>
   <header>
-    <div class="logo">SkillMint</div>
+    <div class="logo" style="background: linear-gradient(90deg,
+          #ff4d4d 0%,
+          #f9cb28 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;">SkillMint</div>
     <nav>
       <!-- <a href="#landing">Login</a> -->
       <!-- <a href="index.html">Register</a> -->
@@ -205,7 +239,7 @@
         <input type="number" id="age" min="14" max="60" required />
         <div id="ageError" class="error">You must be between 14 and 60 years old.</div>
       </div>
-      <button type="submit" class="btn-submit">Continue to OTP</button>
+      <button type="submit" class="btn-submit btn">Continue to OTP</button>
     </form>
   </section>
 
@@ -213,7 +247,7 @@
     <h2>Enter OTP sent to your phone</h2>
     <input type="text" id="otp" placeholder="Enter OTP (0000)" required />
     <div id="otpError" class="error">Invalid OTP. Try again.</div>
-    <a href="index.html"><button class="btn-submit" onclick="verifyOTP()">Verify OTP</button></a>
+    <a href="index.html"><button class="btn-submit btn" onclick="verifyOTP()">Verify OTP</button></a>
   </section>
 
   <!-- <section id="tasksSection" class="form-container" style="display: none">
